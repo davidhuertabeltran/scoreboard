@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { Liveboard } from './components/Liveboard';
 
 function App() {
   const countries = ['Mexico', 'Poland', 'Germany', 'Italy', 'Spain', 'Uruguay', 'Brazil', 'USA', 'Canada', 'Argentina'];
@@ -20,7 +21,6 @@ function App() {
       arr.push(obj);
       setGroups(arr);
     }
-
   }, [])
 
   return (
@@ -28,15 +28,7 @@ function App() {
       <header className="App-header">
         <p>Scoreboard</p>
         <div className="container">
-          <div className="liveboard-container">
-            {groups.map(group => {
-              return <div className="row">
-                <div className="team host">{group.hostTeam}</div>
-                <div className="score">{group.hostTeamScore} - {group.awayTeamScore}</div>
-                <div className="team away">{group.awayTeam}</div>
-              </div>
-            })}
-          </div>
+          <Liveboard groups={groups} />
           <div className="summary-container"></div>
         </div>
       </header>
