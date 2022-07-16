@@ -3,8 +3,32 @@
 .liveboard-container {
     border: 1px solid lightgray;
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
     padding: 15px;
     width: 100%;
 
     @extend %table;
+
+    .match-data {
+        display: flex;
+        padding: 5px;
+        width: 80%;
+    }
+
+    .timer {
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
 }

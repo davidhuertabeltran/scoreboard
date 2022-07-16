@@ -1,5 +1,6 @@
 %table {
     .row {
+        align-items: center;
         display: flex;
         gap: 5px;
         justify-content: center;
@@ -14,7 +15,7 @@
         width: 100%;
     }
 
-    .team.host {
+    .team.home {
         text-align: right;
     }
 
