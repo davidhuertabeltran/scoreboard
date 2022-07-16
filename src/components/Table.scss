@@ -1,0 +1,24 @@
+%table {
+    .row {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .score {
+        max-width: 70px;
+        width: 100%;
+    }
+
+    .team {
+        width: 100%;
+    }
+
+    .team.host {
+        text-align: right;
+    }
+
+    .team.away {
+        text-align: left;
+    }
+}

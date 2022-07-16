@@ -1,32 +1,22 @@
+@use '../src/components/Liverboards.scss';
+@use '../src/components/Summary.scss';
+
 .App {
+  align-items: center;
+  display: flex;
+  height: 100vh;
   text-align: center;
-}
+  width: 100vw;
 
-.container {
-  display: flex;
-}
+  .container {
+    display: flex;
+    gap: 12px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+  }
 
-.liveboard-container,
-.summary-container {
-  width: 50%;
-}
-
-.row {
-  display: flex;
-}
-
-.score {
-  width: 100px;
-}
-
-.team {
-  width: 200px;
-}
-
-.team.host {
-  text-align: right;
-}
-
-.team.away {
-  text-align: left;
+  .App-header {
+    width: 100%;
+  }
 }

@@ -1,0 +1,10 @@
+@use './Table.scss';
+
+.liveboard-container {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 15px;
+    width: 100%;
+
+    @extend %table;
+}

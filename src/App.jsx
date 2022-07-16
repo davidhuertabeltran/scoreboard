@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
 import { Liveboard } from './components/Liveboard';
+import { Summary } from './components/Summary';
 
 function App() {
   const countries = ['Mexico', 'Poland', 'Germany', 'Italy', 'Spain', 'Uruguay', 'Brazil', 'USA', 'Canada', 'Argentina'];
@@ -26,10 +27,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Scoreboard</p>
+        <h1>Scoreboard</h1>
         <div className="container">
           <Liveboard groups={groups} />
-          <div className="summary-container"></div>
+          <Summary groups={groups} />
         </div>
       </header>
     </div>
