@@ -55,8 +55,8 @@ export const Match = ({ match, onMatchEnd }) => {
                 <button onClick={startMatch} className={isActive ? 'hide' : 'show'}>
                     Start
                 </button>
-                <div className={isActive ? 'show' : 'hide'}>
-                    {counter}
+                <div className={isActive ? 'show counter' : 'hide'}>
+                    {counter}'
                 </div>
             </div>
         </div>

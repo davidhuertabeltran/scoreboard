@@ -1,10 +1,16 @@
 @use './Match.scss';
 
-.summary-container {
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 15px;
-    width: 100%;
-
+.summary {
     @extend %match;
+
+    .end {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        width: 20%;
+
+        p {
+            margin: 0;
+        }
+    }
 }

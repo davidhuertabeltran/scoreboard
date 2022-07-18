@@ -1,12 +1,37 @@
 %match {
+    &.matches {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 100%;
+
+        @media (max-width: 750px) { 
+            width: auto;
+        }
+    }
+
     .row {
         align-items: center;
+        border-bottom: 1px solid rgb(74, 129, 19);
         display: flex;
         gap: 5px;
         justify-content: center;
+        padding: 20px 5px;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    .counter {
+        color: rgb(158, 14, 122);
+        font-weight: bold;
     }
 
     .score {
+        font-weight: bold;
         max-width: 70px;
         width: 100%;
     }

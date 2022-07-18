@@ -1,22 +1,39 @@
 @use '../src/components/Liverboards.scss';
 @use '../src/components/Summary.scss';
 
-.App {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  text-align: center;
-  width: 100vw;
+.app {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
 
-  .container {
-    display: flex;
-    gap: 12px;
-    margin: 0 auto;
-    max-width: 1200px;
-    width: 100%;
-  }
+	.container {
+		display: flex;
+		gap: 12px;
+		margin: 30px auto;
+		max-width: 1200px;
+		width: 100%;
 
-  .App-header {
-    width: 100%;
-  }
+		@media (max-width: 750px) {
+			flex-direction: column;
+		}
+	}
+
+	.app-header {
+		width: 100%;
+	}
+
+	.author {
+		font-size: 13px;
+	}
+
+	.title {
+		margin-bottom: 0;
+	}
+
+	button {
+        cursor: pointer;
+        font-family: 'Courier New', Courier, monospace;
+    }
 }

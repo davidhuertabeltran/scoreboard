@@ -1,22 +1,7 @@
 @use './Match.scss';
 
-.liveboard-container {
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    padding: 15px;
-    width: 100%;
-
+.liveboard {
     @extend %match;
-
-    .match-data {
-        display: flex;
-        padding: 5px;
-        width: 80%;
-    }
 
     .timer {
         display: flex;
