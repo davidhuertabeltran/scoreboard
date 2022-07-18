@@ -1,18 +1,11 @@
-import { Timer } from "./Timer"
+import { Match } from "./Match"
 
-export const Liveboard = ({ groups }) => {
+export const Liveboard = ({ matches, onMatchEnd }) => {
     return (
         <div className="liveboard-container">
-            {groups.map(group => {
-                return <div className="row">
-                    <div className="match-data">
-                        <div className="team home">{group.homeTeam}</div>
-                        <div className="score">{group.homeTeamScore} - {group.awayTeamScore}</div>
-                        <div className="team away">{group.awayTeam}</div>
-                    </div>
-                    <Timer />
-                </div>
+            {matches.map(match => {
+                return <Match key={match.id} match={match} onMatchEnd={onMatchEnd} />
             })}
-        </div>
+        </div >
     )
 }
