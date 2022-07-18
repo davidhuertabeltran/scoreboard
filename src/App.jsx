@@ -35,7 +35,6 @@ function App() {
     setLiveMatches(updatedGroups);
     const updatedFinishedMatches = [...finishedMatches];
     updatedFinishedMatches.push(match);
-    console.log('updatedFinishedMatches', updatedFinishedMatches)
     setFinishedMatches(updatedFinishedMatches);
   }
 

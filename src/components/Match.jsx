@@ -8,11 +8,13 @@ export const Match = ({ match, onMatchEnd }) => {
 
     const StartMatch = () => {
         let score1 = 0;
-        let score2 = 1;
+        let score2 = 0;
         setIsActive(true);
         const timer = setInterval(() => {
             setCounter((counter) => counter - 1);
             // @todo: generate random score
+            score1 = score1 + generateGoal();
+            score2 = score2 + generateGoal();
             if (stateRef.current === 1) {
                 EndGame(timer, score1, score2)
             }
@@ -21,10 +23,18 @@ export const Match = ({ match, onMatchEnd }) => {
 
     const EndGame = (timer, score1, score2) => {
         clearInterval(timer);
-        match['endTime'] = Date.now();
+        match['endTime'] = new Date();
         match['homeTeamScore'] = score1;
         match['awayTeamScore'] = score2;
         onMatchEnd(match);
+    }
+
+    const generateGoal = () => {
+        let num = Math.random();
+        if (num < 0.1) {
+            return 1;
+        }
+        return 0;
     }
 
     return (
