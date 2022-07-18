@@ -20,7 +20,7 @@ export const Summary = ({ matches }) => {
                     <div className="team home">{match['homeTeam']}</div>
                     <div className="score">{match.homeTeamScore} - {match.awayTeamScore}</div>
                     <div className="team away">{match.awayTeam}</div>
-                    <div className="end]">{match.endTime.getHours()}:{match.endTime.getMinutes()}:{match.endTime.getSeconds()}</div>
+                    <div className="end">{match.endTime.getHours()}:{match.endTime.getMinutes()}:{match.endTime.getSeconds()}</div>
                 </div>
             })}
         </div>

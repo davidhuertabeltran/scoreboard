@@ -1,4 +1,4 @@
-@use './Table.scss';
+@use './Match.scss';
 
 .summary-container {
     border: 1px solid lightgray;
@@ -6,5 +6,5 @@
     padding: 15px;
     width: 100%;
 
-    @extend %table;
+    @extend %match;
 }

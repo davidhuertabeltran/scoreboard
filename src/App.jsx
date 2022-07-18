@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './App.scss';
 import { Liveboard } from './components/Liveboard';
 import { Summary } from './components/Summary';
 
 function App() {
+  console.log('rerendering whole app')
   const teams = ['Mexico', 'Poland', 'Germany', 'Italy', 'Spain', 'Uruguay', 'Brazil', 'USA', 'Canada', 'Argentina'];
+
   const [liveMatches, setLiveMatches] = useState([]);
+  const liveStateRef = useRef();
+  liveStateRef.current = liveMatches;
 
   const [finishedMatches, setFinishedMatches] = useState([]);
+  const summaryStateRef = useRef();
+  summaryStateRef.current = finishedMatches;
 
-  useEffect(() => {
-    // Prepare team pairs for live scoreboard
+  const prepareGames = () => {
     teams.sort(() => (Math.random() > .5) ? 1 : -1);
     let matches = [];
 
@@ -28,14 +33,27 @@ function App() {
       matches.push(obj);
       setLiveMatches(matches);
     }
-  }, [])
+  }
 
-  const EndMatch = (match) => {
-    const updatedGroups = liveMatches.filter(m => m.id !== match.id);
-    setLiveMatches(updatedGroups);
-    const updatedFinishedMatches = [...finishedMatches];
+  useEffect(() => {
+    // Prepare team pairs for live scoreboard
+    prepareGames();
+  }, []);
+
+  const endMatch = (match) => {
+    // Update liveboard
+    const updatedMatches = liveStateRef.current.filter(m => m.id !== match.id);
+    setLiveMatches(updatedMatches);
+
+    // Update summary board
+    const updatedFinishedMatches = [...summaryStateRef.current];
     updatedFinishedMatches.push(match);
     setFinishedMatches(updatedFinishedMatches);
+  }
+
+  const restart = () => {
+    setFinishedMatches([]);
+    prepareGames();
   }
 
   return (
@@ -43,12 +61,13 @@ function App() {
       <header className="App-header">
         <h1>Scoreboard</h1>
         <div className="container">
-          <Liveboard matches={liveMatches} onMatchEnd={EndMatch} />
+          <Liveboard matches={liveMatches} onMatchEnd={endMatch} restart={restart} />
           <Summary matches={finishedMatches} />
         </div>
       </header>
     </div>
   );
 }
+
 
 export default App;
