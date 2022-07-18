@@ -1,4 +1,4 @@
-# Scoreboard
+# Scoreboard simulator
 
 In order to run this project you need to:
 
