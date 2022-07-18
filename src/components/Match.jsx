@@ -16,7 +16,7 @@ export const Match = ({ match, onMatchEnd }) => {
             if (stateRef.current === 1) {
                 EndGame(timer, score1, score2)
             }
-        }, 1000);
+        }, 300);
     }
 
     const EndGame = (timer, score1, score2) => {
@@ -28,7 +28,7 @@ export const Match = ({ match, onMatchEnd }) => {
     }
 
     return (
-        <div className="match-data">
+        <div className="row match-data">
             <div className="team home">{match.homeTeam}</div>
             <div className="score">{match.homeTeamScore} - {match.awayTeamScore}</div>
             <div className="team away">{match.awayTeam}</div>
